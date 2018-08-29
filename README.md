@@ -1,4 +1,13 @@
+<div align="center">
+
 # AngularTodo
+
+<img src="./sample.gif">
+
+AngularJS 연습 예제입니다
+
+</div>
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
 
