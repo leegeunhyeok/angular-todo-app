@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Item } from '../Item';
 
 @Component({
@@ -9,8 +9,10 @@ import { Item } from '../Item';
 export class ItemComponent {
   @Input() item: Item;
   @Input() visible: boolean;
+  @Output() sendItem: EventEmitter<Item> = new EventEmitter<Item>();
 
   remove () {
-    console.log("remove!", this.item);
+    console.log('item:', this.item);
+    this.sendItem.emit(this.item);
   }
 }

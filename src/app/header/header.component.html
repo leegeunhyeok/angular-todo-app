@@ -1,3 +1,6 @@
 <div id="header">
-  <input type="text" [(ngModel)]="text" (keydown)="keydown($event)">
+  <input type="checkbox" class="check-all" *ngIf="false">
+  <input type="text" class="input"
+    [(ngModel)]="text"
+    (keydown)="keydown($event)">
 </div>

@@ -1,0 +1,15 @@
+#header {
+  position: relative;
+}
+
+.check-all {
+}
+
+.input {
+  border: none;
+  border-bottom: 1px solid #eee;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  outline: none;
+  padding: 5px 10px;
+}

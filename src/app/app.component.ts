@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataManagerService } from './data-manager.service';
+import { Item } from './item';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { DataManagerService } from './data-manager.service';
 })
 export class AppComponent {
   title = 'angular-todo';
-  items: Array<string>;
+  items: Array<Item>;
 
   constructor (private dataManager: DataManagerService) {
     this.items = this.dataManager.fetch();
@@ -18,5 +19,8 @@ export class AppComponent {
     this.dataManager.save(text)
   }
 
-
+  removeItem (item: Item) {
+    console.log('app:', item);
+    this.dataManager.remove(item);
+  }
 }

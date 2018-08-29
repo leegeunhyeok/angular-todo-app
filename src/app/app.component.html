@@ -1,7 +1,7 @@
 <div id="app-main">
   <h1 class="title">TODO</h1>
   <app-header (sendText)="reciveText($event)"></app-header>
-  <app-content [items]="items"></app-content>
+  <app-content (sendItem)="removeItem($event)" [items]="items"></app-content>
   <app-footer></app-footer>
 </div>
 

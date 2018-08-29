@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Item } from '../Item';
 
 @Component({
@@ -6,12 +6,11 @@ import { Item } from '../Item';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent {
   @Input() items: Array<Item>;
+  @Output() sendItem: EventEmitter<Item> = new EventEmitter<Item>();
 
-  constructor() { }
-
-  ngOnInit() {
+  removeItem (item: Item) {
+    this.sendItem.emit(item);
   }
-
 }
