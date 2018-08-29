@@ -1,8 +1,16 @@
 #header {
+  margin-bottom: 20px;
+}
+
+#input-area {
   position: relative;
+  display: inline-block;
 }
 
 .check-all {
+  position: absolute;
+  left: 0px;
+  top: 3px;
 }
 
 .input {
@@ -12,4 +20,5 @@
   color: #fff;
   outline: none;
   padding: 5px 10px;
+  padding-left: 20px;
 }

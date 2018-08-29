@@ -9,9 +9,8 @@ export class DataManagerService {
   private items: Array<Item>;
 
   constructor() {
-    const i = localStorage.getItem(this.STORAGE_KEY);
-    console.log('--', i)
-    this.items = JSON.parse(i || '[]');
+    console.log(localStorage.getItem(this.STORAGE_KEY))
+    this.items = JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
   }
 
   fetch () {
@@ -29,7 +28,6 @@ export class DataManagerService {
   }
 
   remove (data: Item) {
-    console.log(this.items, data);
     const idx = this.items.indexOf(data);
     if (idx === -1) {
       console.log('삭제할 항목이 없습니다.');
@@ -38,6 +36,12 @@ export class DataManagerService {
     this.items.splice(idx, 1);
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.items));
     console.log('삭제:', data);
+  }
+
+  update (data: Item[]) {
+    this.items = data;
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.items));
+    console.log('상태 변경 됨');
   }
 
   isDuplicate (data) {

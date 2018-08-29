@@ -9,8 +9,13 @@ import { Item } from '../Item';
 export class ContentComponent {
   @Input() items: Array<Item>;
   @Output() sendItem: EventEmitter<Item> = new EventEmitter<Item>();
+  @Output() updateItem: EventEmitter<null> = new EventEmitter<null>();
 
   removeItem (item: Item) {
     this.sendItem.emit(item);
+  }
+
+  update () {
+    this.updateItem.emit();
   }
 }

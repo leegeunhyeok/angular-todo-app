@@ -1,3 +1,7 @@
 <div id="footer">
-  Footer
+  <div>{{ checked() }} / {{ items.length }}</div>
+  <div>
+    <button class="remove-checked-items" (click)="removeCheckedItem()">선택항목 지우기</button>
+  </div>
 </div>
+

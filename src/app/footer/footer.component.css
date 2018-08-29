@@ -1,5 +1,24 @@
 #footer {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   background-color: #fff;
+  margin: auto;
   margin-top: 10px;
+  padding: 5px;
+  width: 60%;
+}
+
+.remove-checked-items {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid dodgerblue;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 2px 6px;
+  margin: 5px 0;
+}
+
+.remove-checked-items:hover {
+  border: 1px solid dodgerblue;
+  background-color: dodgerblue;
+  color: #fff;
 }

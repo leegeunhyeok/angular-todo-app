@@ -20,7 +20,29 @@ export class AppComponent {
   }
 
   removeItem (item: Item) {
-    console.log('app:', item);
     this.dataManager.remove(item);
+  }
+
+  removeCheckedItem () {
+    let items = [];
+    for (let i of this.items) {
+      if (!i.done) {
+        items.push(i);
+      }
+    }
+    this.items = items;
+    this.updateItem();
+  }
+
+  updateItem () {
+    this.dataManager.update(this.items);
+  }
+
+  checkAll (checked: boolean) {
+    this.items = this.items.map(el => {
+      el.done = checked;
+      return el;
+    })
+    this.updateItem ();
   }
 }
