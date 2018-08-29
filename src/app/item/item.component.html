@@ -1,0 +1,5 @@
+<div class="item" (mouseenter)="visible = true" (mouseleave)="visible = false">
+  <input type="checkbox" class="item-done" [(ngModel)]="item.done">
+  {{ item.text }}
+  <span *ngIf="visible" class="item-remove" (click)="remove()"></span>
+</div>
