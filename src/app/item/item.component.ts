@@ -32,4 +32,10 @@ export class ItemComponent {
   remove () {
     this.sendItem.emit(this.item);
   }
+
+  currentItemStyle () {
+    return {
+      'text-decoration': this.item.done ? 'line-through' : 'none'
+    };
+  }
 }
