@@ -36,9 +36,9 @@ export class AppComponent {
    * @description 체크된 TODO 아이템을 삭제
    */
   removeCheckedItem () {
-    let items = [];
+    const items = [];
     // 체크되지않은 아이템만 다른 배열에 할당
-    for (let i of this.items) {
+    for (const i of this.items) {
       if (!i.done) {
         items.push(i);
       }

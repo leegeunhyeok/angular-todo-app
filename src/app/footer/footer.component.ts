@@ -10,7 +10,7 @@ export class FooterComponent {
   // TODO 아이템 리스트
   @Input() items: Item[];
 
-  // 부모 컴포넌트에게 체크된 아이템 삭제요청할 Emitter 
+  // 부모 컴포넌트에게 체크된 아이템 삭제요청할 Emitter
   @Output() rmCheckedItem: EventEmitter<null> = new EventEmitter<null>();
 
   /**
@@ -19,7 +19,7 @@ export class FooterComponent {
    */
   checked () {
     let checked = 0;
-    for (let i of this.items) {
+    for (const i of this.items) {
       if (i.done) {
         checked++;
       }

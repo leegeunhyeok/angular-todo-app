@@ -5,11 +5,11 @@ import { Item } from './Item';
   providedIn: 'root'
 })
 export class DataManagerService {
-  private STORAGE_KEY = "angular-todo";
+  private STORAGE_KEY = 'angular-todo';
   private items: Array<Item>;
 
   constructor() {
-    console.log(localStorage.getItem(this.STORAGE_KEY))
+    console.log(localStorage.getItem(this.STORAGE_KEY));
     this.items = JSON.parse(localStorage.getItem(this.STORAGE_KEY) || '[]');
   }
 
@@ -19,10 +19,10 @@ export class DataManagerService {
 
   save (data: string) {
     if (this.isDuplicate(data)) {
-      console.log('이미 존재하는 항목입니다.')
-      return
+      console.log('이미 존재하는 항목입니다.');
+      return;
     }
-    this.items.push({text: data, done: false})
+    this.items.push({text: data, done: false});
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.items));
     console.log('추가:', data);
   }
@@ -46,7 +46,7 @@ export class DataManagerService {
 
   isDuplicate (data) {
     let duplicate = false;
-    for (let item of this.items) {
+    for (const item of this.items) {
       if (data === item.text) {
         duplicate = true;
         break;

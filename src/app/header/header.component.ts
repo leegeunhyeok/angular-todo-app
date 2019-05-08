@@ -26,14 +26,14 @@ export class HeaderComponent implements OnInit, DoCheck {
    * @description 컴포넌트 초기화
    */
   ngOnInit () {
-    this.check_all = this.items.every(el => el.done)
+    this.check_all = this.items.every(el => el.done);
   }
 
   /**
    * @description 데이터 변경 감지 후 아이템이 모두 체크되어있는지 확인
    */
   ngDoCheck () {
-    this.check_all = this.items.every(el => el.done)
+    this.check_all = this.items.every(el => el.done);
   }
 
   /**
@@ -45,12 +45,12 @@ export class HeaderComponent implements OnInit, DoCheck {
 
   /**
    * @description 키보드 눌림 감지, 엔터키가 눌리면 입력 텍스트 부모컴포넌트에게 전달
-   * @param event 키보드 이벤트 객체 
+   * @param event 키보드 이벤트 객체
    */
   keydown (event) {
     if (event.keyCode === 13) {
-      this.sendText.emit(this.text)
-      this.text = ""
+      this.sendText.emit(this.text);
+      this.text = '';
     }
   }
 
