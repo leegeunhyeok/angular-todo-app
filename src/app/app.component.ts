@@ -21,7 +21,7 @@ export class AppComponent {
    * @param text TODO로 추가할 텍스트
    */
   reciveText (text: string) {
-    this.dataManager.save(text)
+    this.dataManager.save(text);
   }
 
   /**
@@ -63,7 +63,7 @@ export class AppComponent {
     this.items = this.items.map(el => {
       el.done = checked;
       return el;
-    })
+    });
     this.updateItem ();
   }
 }

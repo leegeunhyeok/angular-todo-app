@@ -31,3 +31,24 @@
   content: "x";
 }
 
+.item-close {
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+  top: 0px;
+  background-color: none;
+  color: green;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.item-close::before {
+  content: "o";
+}
+
+.input {
+  border: none;
+  outline: none;
+  text-align: center;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}

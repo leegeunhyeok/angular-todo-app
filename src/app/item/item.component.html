@@ -1,5 +1,17 @@
 <div class="item" (mouseenter)="visible = true" (mouseleave)="visible = false">
-  <input type="checkbox" class="item-done" [(ngModel)]="item.done" (ngModelChange)="watch()">
-  <div [ngStyle]="currentItemStyle()">{{ item.text }}</div>
-  <span *ngIf="visible" class="item-remove" (click)="remove()"></span>
+  <input type="checkbox" class="item-done"
+    (ngModelChange)="watch($event)"
+    [ngModel]="item.done"
+  >
+  <div *ngIf="_view; else itemUpdate">
+    <div [ngStyle]="currentItemStyle()" (click)="update()">{{ item.text }}</div>
+    <span *ngIf="visible" class="item-remove" (click)="remove()"></span>
+  </div>
+  <ng-template #itemUpdate>
+    <input class="input"
+      (keydown)="keydown($event)"
+      [(ngModel)]="item.text"
+    >
+    <span class="item-close" (click)="close()"></span>
+  </ng-template>
 </div>
